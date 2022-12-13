@@ -6,7 +6,7 @@ class Product(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
     price = models.FloatField()
-    picture = models.ImageField(upload_to='media', blank=True, null=True)
+    picture = models.ImageField(blank=True, null=True)
     category = models.ForeignKey(Category ,on_delete=models.CASCADE)
 
     class Meta:
