@@ -4,20 +4,22 @@
 
 
 {% block content %}
-<div class="row">
-    {%for product in products%}
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-3"> 
-        <div class="card text-center" style="width: 20rem; height: 28rem;">
-            <img src="{{ product.picture.url }}" style='height: 50%; width: 70%; object-fit: cover; display: block; margin-left: auto; margin-right: auto;' />
-                <div class="card-body">
-                    <h4 class="card-title">{{product.name}}</h4>
-                    <h5 class="card-subtitle mb-2 text-muted">{{product.price}}</h5>
-                    <p class="card-text">{{product.description}}</p>
-                    <a href="#" class="btn btn-primary">Detail</a>
-                    <a href="#" class="btn btn-success">Add to cart</a>
-                </div>
+<div class="container">
+    <div class="row">
+        {%for product in products%}
+        <div class=" col-12 col-md-6 col-lg-4 my-3"> 
+            <div class="card shadow" style="width: 20rem; height: 28rem">
+                <img src="{{ product.picture.url }}" style='height: 50%; width: 60%; object-fit: cover; display: block; margin-left: auto; margin-right: auto;' />
+                    <div class="card-body text-center">
+                        <h4 class="card-title">{{product.name}}</h4>
+                        <h5 class="card-subtitle mb-2 text-muted">{{product.price}} VND</h5>
+                        <p class="card-text">{{product.description}}</p>
+                        <a href="#" class="btn btn-primary">Detail</a>
+                        <a href="#" class="btn btn-success">Add to cart</a>
+                    </div>
+            </div>
         </div>
+        {% endfor %}    
     </div>
-    {% endfor %}    
 </div>
 {% endblock content %}
