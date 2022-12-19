@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock title %}
+
+{% block style %}
+<style>
+    .container{  
+    text-align: center;   
+    }  
+    .center{
+        position: absolute;
+        top: 53%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        background: white;
+        border-radius: 10px;
+        border: 7px solid lightblue;  
+    }
+    .center h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+    }
+    .center form{
+    padding: 0 40px;
+    box-sizing: border-box;
+    }   
+    </style>
+{% endblock style %}
+
+{% block content %}
+<div class="container">
+<div class="center">
+<h1>Register</h1>
+<form method="POST">
+    {% csrf_token %}
+
+    {{form}}
+
+    <button class="btn btn-success">Register</button>
+</form>
+</div>
+</div>
+{% endblock content %}
