@@ -23,7 +23,7 @@ def register(request):
 
         profile.save()
 
-        return redirect('product/')
+        return redirect('http://localhost:8000/product/')
 
     context = {"form": form}
     return render(request, "customer/register.html", context)
